@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 
-var letters = "acdegilmnoprstuw";
-var num = 37;
-
-function createHash(init, num, chars){
+module.exports.createHasher = function createHasher(init, num, chars){
     var init = init;
     var num = num;
     var chars = chars;
 
-    function MyHash(init){
+    function MyHasher(init){
         this.hash = function(s){
             var h = init;
             for(i = 0; i < s.length; i++)
@@ -29,9 +26,9 @@ function createHash(init, num, chars){
             return s.split("").reverse().join("");
         }
     }
-    return new MyHash(init);
+    return new MyHasher(init);
 }
 
-var x = createHash(7,37,'acdegilmnoprstuw');
-console.log(x.hash("leepadg"));
-console.log(x.reverseHash(930846109532517));
+//var myHasher = createHasher(7,37,'acdegilmnoprstuw');
+//console.log(myHasher.hash("leepadg"));
+//console.log(myHasher.reverseHash(930846109532517));
