@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+// create hashing function with createHasher()
+// where chars is the group of hashable characters
+// and init and num are used to create the hash
+
 module.exports.createHasher = function createHasher(init, num, chars){
     var init = init;
     var num = num;
@@ -28,7 +32,3 @@ module.exports.createHasher = function createHasher(init, num, chars){
     }
     return new MyHasher(init);
 }
-
-//var myHasher = createHasher(7,37,'acdegilmnoprstuw');
-//console.log(myHasher.hash("leepadg"));
-//console.log(myHasher.reverseHash(930846109532517));
