@@ -4,6 +4,21 @@ var letters = "acdegilmnoprstuw";
 
 var num = 37;
 
+function createHash(init, num, chars){
+    var init = init;
+    var num = num;
+    var chars = chars;
+
+    function MyHash(init){
+        this.hash = function(s){
+            var h = init;
+            for(i = 0; i < s.length; i++)
+                h = (h * num + chars.indexOf(s[i]));
+            return h
+        }
+    }
+    return new MyHash(init);
+}
 
 function myHash64(s){
     var h = 7;
@@ -33,3 +48,6 @@ console.log(reverseMyHash64(930846109532517));
 
 console.log(myHash64("leepadg"));
 console.log(reverseMyHash64(680131659347));
+
+var x = createHash(7,37,'acdegilmnoprstuw');
+console.log(x.hash("leepadg"));
