@@ -4,7 +4,7 @@ var letters = "acdegilmnoprstuw";
 var num = 37;
 var init = 7;
 
-var Hasher = require('./trello_exercise.js');
+var Hasher = require('./create_hasher.js');
 var myHasher = Hasher.createHasher(init,num,letters);
 
 console.log(myHasher.hash("leepadg"));

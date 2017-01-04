@@ -4,6 +4,8 @@
 // where chars is the group of hashable characters
 // and init and num are used to create the hash
 
+// does not account for hash collisions, if any possible
+
 module.exports.createHasher = function createHasher(init, num, chars){
     var init = init;
     var num = num;
